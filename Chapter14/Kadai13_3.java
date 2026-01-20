@@ -1,10 +1,10 @@
-package Chapter13;
+package Chapter14;
 
-interface Person1 {
+interface Person{
     void introduce();    
 }
 
-abstract class Base implements Person1 {
+abstract class Base implements Person{
     String name;
     String job;
     public Base(String name,String job){
@@ -27,6 +27,7 @@ class Teacher extends Base{
 
     @Override
     public void introduce(){
+        base();
         System.out.printf("担当科目 : %s",subject);
     }
 }
@@ -40,14 +41,15 @@ class Cook extends Base{
 
     @Override
     public void introduce(){
+        base();
         System.out.printf("得意料理 : %s",specialties);
     }
 }
 
 public class Kadai13_3 {
     public static void main(String[] args) {
-        Person1 p1 = new Teacher("竹井一馬", "教員", "情報処理");
-        Person1 p2 = new Cook("大原太郎 ", "シェフ", "オムライス");
+        Person p1 = new Teacher("竹井一馬", "教員", "情報処理");
+        Person p2 = new Cook("大原太郎 ", "シェフ", "オムライス");
         p1.introduce();
         System.out.println();
         System.out.println();
